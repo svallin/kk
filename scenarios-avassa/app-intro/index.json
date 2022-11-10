@@ -1,23 +1,23 @@
 {
-  "title": "App Intro",
-  "description": "Learn how to create applications",
-  "details": {
-    "intro": {
-      "text": "app-intro.md"
+    "title": "App Intro",
+    "description": "Learn how to create applications",
+    "details": {
+        "intro": {
+            "text": "app-intro.md"
+        },
+        "steps": [
+            {
+                "title": "Create a simple application",
+                "text": "step1/text.md"
+            },
+            {
+                "title": "Create a more advanced application",
+                "text": "step2/text.md"
+            }
+        ]
     },
-    "steps": [
-      {
-        "title": "Create a simple application",
-        "text": "step1/text.md"
-      }
-      {
-        "title": "Create a more advanced application",
-        "text": "step2/text.md"
-      }
-
-    ]
-  },
-  "backend": {
-    "imageid": "ubuntu"
-  }
+    "backend": {
+        "imageid": "ubuntu"
+    }
 }
+
