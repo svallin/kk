@@ -8,11 +8,11 @@
     "steps": [
       {
         "title": "Create a simple application",
-        "text": "step1/text.md",
+        "text": "step1/text.md"
       }
       {
         "title": "Create a more advanced application",
-        "text": "step2/text.md",
+        "text": "step2/text.md"
       }
 
     ]
