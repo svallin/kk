@@ -1,0 +1,15 @@
+{
+  "title": "A playground",
+  "description": "Play with Git",
+  "backend": {
+    "imageid": "ubuntu"
+  },
+  "details": {
+     "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  }
+}
