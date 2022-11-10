@@ -1,16 +1,20 @@
 {
-  "title": "Site Intro",
-  "description": "Learn how to view sites",
+  "title": "App Intro",
+  "description": "Learn how to create applications",
   "details": {
     "intro": {
-      "text": "site-intro.md"
+      "text": "app-intro.md"
     },
     "steps": [
       {
-        "title": "Clone a repository",
+        "title": "Create a simple application",
         "text": "step1/text.md",
-        "verify": "step1/verify.sh"
       }
+      {
+        "title": "Create a more advanced application",
+        "text": "step2/text.md",
+      }
+
     ]
   },
   "backend": {
