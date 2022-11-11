@@ -1,6 +1,3 @@
-<br>
-This series of scenarios will get you started with Avassa using the Avassa command line tool `supctl`.
-It assumes that you have a running Avassa environment.
 
 <br>
 The first thing we will do is to install the command line tool `supctl`.
@@ -18,5 +15,3 @@ Validate that you can run Avassa commands by trying:
 ```plain
 ./supctl profile show
 ```{{exec}}
-
-

@@ -1,6 +1,6 @@
 {
-  "title": "A playground",
-  "description": "Play with Git",
+  "title": "Getting started with Avassa using the command line tool",
+  "description": "A series of steps to learn the basics around sites, applications and deployments",
   "backend": {
     "imageid": "ubuntu"
   },
@@ -8,6 +8,24 @@
      "intro": {
       "text": "intro.md"
     },
+    "steps": [
+      {
+        "title": "Install the command line tool",
+        "text": "step1/text.md"
+      },
+      {
+        "title": "View the sites",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Create a simple application",
+        "text": "step3/text.md"
+      },
+      {
+        "title": "Deploy the application",
+        "text": "step4/text.md"
+      },
+  ]
     "finish": {
       "text": "finish.md"
     }
