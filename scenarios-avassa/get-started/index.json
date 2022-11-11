@@ -27,6 +27,9 @@
       }
     ]
     },
+    "backend": {
+      "imageid": "ubuntu"
+    },
     "finish": {
       "text": "finish.md"
     }
