@@ -79,7 +79,7 @@ EOF
 * Create the secret with values:
 
 ```plain
-./supctl create strongbox vaults credentials secrets <<EOF
+./supctl create strongbox vaults operations secrets <<EOF
 name: credentials
 data:
   password: the-password
