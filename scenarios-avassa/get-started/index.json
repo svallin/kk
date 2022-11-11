@@ -18,11 +18,11 @@
         "text": "step2/text.md"
       },
       {
-        "title": "Create a simple application",
+        "title": "Deploy a simple application",
         "text": "step3/text.md"
       },
       {
-        "title": "Deploy the application",
+        "title": "Deploy and upgrade a more advanced application",
         "text": "step4/text.md"
       }
     ]

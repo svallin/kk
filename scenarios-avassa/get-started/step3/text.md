@@ -69,6 +69,8 @@ Check the state of the deployment:
 ./supctl show application-deployments popcorn-deployment
 ```{{exec}}
 
+The first time you perform the command above it might say `deploying-to`, perform the command again and you will most likely see the `deployed-to` state.
+
 You can also get a summary status of the *application health* across all sites
 
 ```plain

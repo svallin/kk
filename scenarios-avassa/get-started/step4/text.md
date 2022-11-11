@@ -3,6 +3,8 @@ We will continue with a more advanced application and an application upgrade sce
 The application below has several services (theater-operations, curtain-controller) and it also picks up secrets (user-name, password).
 Note also that we have explicit versions on the containers as well as a version for the application itself.
 
+Use the editor to create the following application, save it to file `theater-room-manager.yml`
+
 ```yaml
 name: theater-room-manager
 version: "1.0"
@@ -49,11 +51,22 @@ services:
 
 <br>
 
-When the application is scheduled on sites it will mount the secrets as files. Secrets are configure in the Control Tower and distributed encrypted to the sites. Create a strongbox vault with secrets as shown below.
+When the application is scheduled on sites it will mount the secrets as files. Secrets are configure in the Control Tower and distributed encrypted to the sites. Create a strongbox vault with secrets as shown below. Lets create the application:
 
+```plain
+./supctl create applications < theater-room-manager.yml              
+```{{exec}}
+
+Validate that the application was registered and that it found the containers:
+```plain
+./supctl show applications theater-room-manager           
+```{{exec}}
+
+<br>
+Before deploying the application we need to configure the required secrets and distribute it to the sites.
 Create the vault with secrets. For simplicity we are just distributing the secrets to all sites. There are fine-grained distribution policies as well. 
 
-1. Create the vault
+* Create the vault
 
 ```plain
 ./supctl create strongbox vaults <<EOF               
@@ -63,7 +76,7 @@ distribute:
 EOF
 ```{{exec}}
 
-2. Create the secret with values:
+* Create the secret with values:
 
 ```plain
 ./supctl create strongbox vaults credentials secrets <<EOF
