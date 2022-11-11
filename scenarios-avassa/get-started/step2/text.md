@@ -17,17 +17,16 @@ You can also get the summar of the status of the sites
 
 In order to check a specific site enter tab after the command and select a specific site
 ```plain
-././supctl show system sites 
+./supctl show system sites 
 ```{{exec}}
 
 <br>
 
+All of the above commands where targeted towards Control Tower. The Control Tower has a view of the state of the sites. But you can drill-down even further to sites by directing a supctl command to a specific site. For example, to get details abouts hosts on the site you can do:
 ```plain
-././supctl show system sites
+./supctl show --site gothenburg-bergakungen system cluster hosts
 ```{{exec}}
 
 <br>
 
-```plain
-././supctl show system sites
-```{{exec}}
+The above command illustrates that on each site, the hosts form a cluster.
