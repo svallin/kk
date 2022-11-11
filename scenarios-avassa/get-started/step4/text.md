@@ -70,7 +70,7 @@ Create the vault with secrets. For simplicity we are just distributing the secre
 
 ```plain
 ./supctl create strongbox vaults <<EOF               
-name: credentials
+name: operations
 distribute:
   to: all
 EOF
@@ -80,7 +80,7 @@ EOF
 
 ```plain
 ./supctl create strongbox vaults credentials secrets <<EOF
-name: operations
+name: credentials
 data:
   password: the-password
   username: the-user

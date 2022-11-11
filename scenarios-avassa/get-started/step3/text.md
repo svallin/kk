@@ -52,7 +52,6 @@ placement:
   match-site-labels: system/type = edge
 ```{{copy}}
 
-`popcorn-deployment.yml`{{open}}
 
 The interesting piece above is the label matching placement. Avassa will find all sites with a matching label and request the scheduler to run it there.
 Now, create that deployment:
