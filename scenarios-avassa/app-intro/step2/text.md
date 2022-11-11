@@ -8,5 +8,6 @@ Add the following advanced app spec to Avassa
 
 ```plain
 hello
+```
 
 </details>
