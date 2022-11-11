@@ -13,8 +13,10 @@ services:
     containers:
       - name: kettle-popper-manager
         image: registry.gitlab.com/avassa-public/movie-theaters-demo/kettle-popper-manager
-```
+```{{copy}}
 <br>
+
+`popcorn.yml`{{open}}
 
 The above application specification says:
 
@@ -41,14 +43,16 @@ Note well that the status tells that the images has been fetched and store in th
 You can also use the Control Tower to see the application. (You may need to refresh the window)
 
 <br>
-Now it is time to deploy the application. Use the editor to create the following deployment. Save it in popcorn-deploy.yml
+Now it is time to deploy the application. Use the editor to create the following deployment. Save it in popcorn-deployment.yml
 
 ```yaml
 name: popcorn-deployment
 application: popcorn-controller
 placement:
   match-site-labels: system/type = edge
-```
+```{{copy}}
+
+`popcorn-deployment.yml`{{open}}
 
 The interesting piece above is the label matching placement. Avassa will find all sites with a matching label and request the scheduler to run it there.
 Now, create that deployment:
@@ -74,11 +78,12 @@ You can also get a summary status of the *application health* across all sites
 In order to drill down and see details about an application on a site you can do
 
 ```plain
-supctl show --site gothenburg-bergakungen applications popcorn-controller 
+./supctl show --site gothenburg-bergakungen applications popcorn-controller 
 ```{{exec}}
 
 An important use case is to be able to see the container logs on the sites. The command below shows the container logs on the gothenburg-bergakungen since 10 minutes. Note well that you can use tab completion to build the command
 
 ```plain
-/supctl do --site gothenburg-bergakungen volga topics system:container-logs:popcorn-controller.popcorn-service-1.kettle-popper-manager consume --position-since 10m```{{exec}}
+./supctl do --site gothenburg-bergakungen volga topics system:container-logs:popcorn-controller.popcorn-service-1.kettle-popper-manager consume --position-since 10m
+```{{exec}}
 

@@ -1,31 +1,70 @@
-Now lets view the sites.
+We will continue with a more advanced application and an application upgrade scenario.
 
-```plain
-././supctl show system sites
-```{{exec}}
+```yaml
+name: theater-room-manager
+version: "1.0"
+services:
+  - name: theater-operations
+    share-pid-namespace: false
+    variables:
+      - name: OPERATIONS_USERNAME
+        value-from-vault-secret:
+          vault: operations
+          secret: credentials
+          key: username
+    containers:
+      - name: projector-operations
+        image: registry.gitlab.com/avassa-public/movie-theaters-demo/projector-operations:v1.0
+        on-mounted-file-change:
+          restart: true
+      - name: digital-assets-manager
+        image: registry.gitlab.com/avassa-public/movie-theaters-demo/digital-assets-manager:v1.0
+        mounts:
+          - volume-name: credentials
+            mount-path: /credentials
+        env:
+          USERNAME: ${OPERATIONS_USERNAME}
+        on-mounted-file-change:
+          restart: true
+    mode: replicated
+    replicas: 1
+    volumes:
+      - name: credentials
+        vault-secret:
+          vault: operations
+          secret: credentials
+  - name: curtain-controller
+    share-pid-namespace: false
+    containers:
+      - name: curtain-controller
+        image: registry.gitlab.com/avassa-public/movie-theaters-demo/curtain-controller:v1.0
+        on-mounted-file-change:
+          restart: true
+    mode: replicated
+    replicas: 1
+```{{copy}}
+
+Open in the editor:
+
+`theater-room-manager.yml`{{open}}
+
 
 <br>
+And the deployment:
 
-You can also get the summar of the status of the sites
+```yaml
+name: theater-room-manager-deployment
+application: theater-room-manager
+application-version: "*"
+placement:
+  match-site-labels: >
+    system/type = edge
+```{{copy}}
 
-```plain
-./supctl show system site-status sites
-```{{exec}}
+You can open that in the editor:
 
-<br>
+`theater-room-manager-deployment.yml`{{open}}
 
-In order to check a specific site enter tab after the command and select a specific site
-```plain
-./supctl show system sites 
-```{{exec}}
 
-<br>
 
-All of the above commands where targeted towards Control Tower. The Control Tower has a view of the state of the sites. But you can drill-down even further to sites by directing a supctl command to a specific site. For example, to get details abouts hosts on the site you can do:
-```plain
-./supctl show --site gothenburg-bergakungen system cluster hosts
-```{{exec}}
 
-<br>
-
-The above command illustrates that on each site, the hosts form a cluster.

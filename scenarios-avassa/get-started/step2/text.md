@@ -2,7 +2,7 @@
 Now lets view the sites.
 
 ```plain
-././supctl show system sites
+./supctl show system sites
 ```{{exec}}
 
 <br>
@@ -15,9 +15,9 @@ You can also get the summar of the status of the sites
 
 <br>
 
-In order to check a specific site enter tab after the command and select a specific site
+In order to check a specific site enter tab after the command and select a specific site, for example
 ```plain
-./supctl show system sites 
+./supctl show system sites stockholm-sture
 ```{{exec}}
 
 <br>
